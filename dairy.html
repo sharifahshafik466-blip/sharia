@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dairy Sector | Ogies Dairy & Property Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --primary-blue: #1a4b8c; --secondary-blue: #2a6fd6; --light-blue: #e6f0fa; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
+        .nav-link:hover { color: var(--secondary-blue); border-bottom: 2px solid var(--secondary-blue); }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .whatsapp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
+            background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center;
+            font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 100;
+            display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+        }
+        .whatsapp-float:hover { background-color: #128C7E; transform: scale(1.1); }
+        .hero-dairy {
+            background: linear-gradient(rgba(26, 75, 140, 0.85), rgba(26, 75, 140, 0.85)),
+                url('https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=1470&q=80');
+            background-size: cover; background-position: center;
+        }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
+        .product-card { transition: all 0.3s; }
+        .tab-btn.active { background-color: #1a4b8c; color: white; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .spec-row:nth-child(even) { background-color: #e6f0fa; }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Top Bar -->
+    <div class="bg-blue-900 text-white py-2 px-4">
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center">
+                <i class="fas fa-globe mr-2"></i>
+                <select class="bg-blue-900 text-white border-none focus:ring-0">
+                    <option>English</option><option>Luganda</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="mr-3 flex-shrink-0">
+                    <img src="logo.png" alt="OGIES Logo" class="h-12 w-12 rounded-full object-cover border-2 border-blue-900">
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-blue-900 leading-none">OGIES</div>
+                    <div class="text-xs text-gray-600">Dairy & Property Management</div>
+                </div>
+            </div>
+           <!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <div class="mr-3 flex-shrink-0">
+                <img src="logo.png" alt="OGIES Logo" class="h-12 w-12 rounded-full object-cover border-2 border-blue-900">
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-blue-900 leading-none">OGIES</div>
+                <div class="text-xs text-gray-600">Dairy & Property Management</div>
+            </div>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex space-x-8 items-center">
+            <a href="index.html" class="nav-link font-medium text-gray-700 hover:text-blue-900">Home</a>
+            <a href="about.html" class="nav-link font-medium text-blue-900 border-b-2 border-blue-900">Company</a>
+            
+            <!-- Dropdown (hover on desktop, we'll make it click-friendly on mobile later) -->
+            <div class="dropdown relative group">
+                <button class="nav-link font-medium text-gray-700 hover:text-blue-900 flex items-center">
+                    Dairy Sector <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                </button>
+                <div class="dropdown-menu absolute hidden group-hover:block bg-white shadow-lg rounded mt-2 py-2 w-48">
+                    <a href="dairy.html#pasteurizers" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900">Pasteurizers</a>
+                    <a href="dairy.html#milking" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900">Milking Machines</a>
+                    <a href="dairy.html#cheese" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900">Cheese Production</a>
+                </div>
+            </div>
+            
+            <a href="agrifood.html" class="nav-link font-medium text-gray-700 hover:text-blue-900">Agri-food Industry</a>
+            <a href="property.html" class="nav-link font-medium text-gray-700 hover:text-blue-900">Property Management</a>
+            <a href="#" class="nav-link font-medium text-gray-700 hover:text-blue-900">News</a>
+            <a href="#contact" class="nav-link font-medium text-gray-700 hover:text-blue-900">Contacts</a>
+        </nav>
+
+        <!-- Hamburger Button (mobile only) -->
+        <button id="mobile-menu-btn" class="md:hidden text-blue-900 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+        <div class="px-4 py-6 flex flex-col space-y-4">
+            <a href="index.html" class="font-medium text-gray-700 hover:text-blue-900">Home</a>
+            <a href="about.html" class="font-medium text-blue-900">Company</a>
+            
+            <!-- Mobile Dropdown (simple nested list for mobile) -->
+            <div class="space-y-2">
+                <div class="font-medium text-gray-700">Dairy Sector</div>
+                <div class="pl-4 flex flex-col space-y-2">
+                    <a href="dairy.html#pasteurizers" class="text-gray-700 hover:text-blue-900">Pasteurizers</a>
+                    <a href="dairy.html#milking" class="text-gray-700 hover:text-blue-900">Milking Machines</a>
+                    <a href="dairy.html#cheese" class="text-gray-700 hover:text-blue-900">Cheese Production</a>
+                </div>
+            </div>
+            
+            <a href="agrifood.html" class="font-medium text-gray-700 hover:text-blue-900">Agri-food Industry</a>
+            <a href="property.html" class="font-medium text-gray-700 hover:text-blue-900">Property Management</a>
+            <a href="#" class="font-medium text-gray-700 hover:text-blue-900">News</a>
+            <a href="#contact" class="font-medium text-gray-700 hover:text-blue-900">Contacts</a>
+        </div>
+    </div>
+</header>
+    <!-- Hero -->
+    <section class="hero-dairy text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-blue-200 uppercase tracking-widest text-sm mb-3">Equipment & Solutions</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Dairy Sector</h1>
+            <p class="text-xl max-w-2xl mx-auto text-blue-100">Professional-grade dairy processing equipment tailored for Uganda's growing dairy industry — from farm to finished product.</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-blue-50 py-3 px-4">
+        <div class="container mx-auto text-sm text-gray-600">
+            <a href="index.html" class="hover:text-blue-900">Home</a> <span class="mx-2">/</span> <span class="text-blue-900 font-medium">Dairy Sector</span>
+        </div>
+    </div>
+
+    <!-- Intro -->
+    <section class="py-14 bg-white">
+        <div class="container mx-auto px-4 text-center max-w-3xl">
+            <h2 class="text-3xl font-bold text-blue-900 mb-4">Complete Dairy Processing Solutions</h2>
+            <div class="w-16 h-1 bg-blue-900 mx-auto mb-6"></div>
+            <p class="text-gray-600 leading-relaxed text-lg">We supply a comprehensive range of dairy equipment from world-class manufacturers, fully compliant with Ugandan food safety standards. Whether you're a small farmer or an industrial processor, we have the right solution for your scale and budget.</p>
+        </div>
+    </section>
+
+    <!-- PASTEURIZERS -->
+    <section id="pasteurizers" class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-start gap-12">
+                <div class="md:w-1/2">
+                    <img src="y.jpg" alt="Milk Pasteurizer" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <div class="inline-block bg-blue-900 text-white text-xs font-bold px-3 py-1 rounded mb-4 uppercase tracking-wide">Dairy Equipment</div>
+                    <h2 class="text-3xl font-bold text-blue-900 mb-4">Milk Pasteurizers</h2>
+                    <div class="w-16 h-1 bg-blue-900 mb-6"></div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Our advanced pasteurization systems eliminate harmful pathogens while preserving the nutritional value of milk. Designed for reliability in Uganda's operating conditions, these units are energy-efficient and easy to clean.</p>
+                    <h4 class="font-bold text-blue-900 mb-3">Key Specifications:</h4>
+                    <table class="w-full text-sm mb-6 rounded overflow-hidden">
+                        <tr class="spec-row"><td class="py-2 px-3 font-medium">Applications</td><td class="py-2 px-3 text-gray-700">Drinking milk, yogurt, cheese</td></tr>
+                        <tr class="spec-row"><td class="py-2 px-3 font-medium">Flow Rates</td><td class="py-2 px-3 text-gray-700">500 – 35,000 liters/hour</td></tr>
+                        <tr class="spec-row"><td class="py-2 px-3 font-medium">Construction</td><td class="py-2 px-3 text-gray-700">Food-grade stainless steel</td></tr>
+                        <tr class="spec-row"><td class="py-2 px-3 font-medium">Controls</td><td class="py-2 px-3 text-gray-700">Automated with digital display</td></tr>
+                        <tr class="spec-row"><td class="py-2 px-3 font-medium">Compliance</td><td class="py-2 px-3 text-gray-700">Ugandan food safety standards</td></tr>
+                    </table>
+                    <a href="#contact" class="bg-blue-900 text-white px-6 py-3 rounded font-bold hover:bg-blue-800 transition inline-block">Request a Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MILKING MACHINES -->
+    <section id="milking" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row-reverse items-start gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1596133693855-e39cfce94e3b?auto=format&fit=crop&w=800&q=80" alt="Milking Machines" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <div class="inline-block bg-blue-900 text-white text-xs font-bold px-3 py-1 rounded mb-4 uppercase tracking-wide">Farm Equipment</div>
+                    <h2 class="text-3xl font-bold text-blue-900 mb-4">Milking Machines</h2>
+                    <div class="w-16 h-1 bg-blue-900 mb-6"></div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Modern milking machines that improve efficiency, reduce labor costs, and ensure hygienic collection of milk. Our units are suitable for small herds to large commercial operations.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <i class="fas fa-tint text-blue-900 text-2xl mb-2"></i>
+                            <h4 class="font-bold text-blue-900">Bucket Milkers</h4>
+                            <p class="text-gray-600 text-sm">Ideal for small farms, portable and easy to use.</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <i class="fas fa-cogs text-blue-900 text-2xl mb-2"></i>
+                            <h4 class="font-bold text-blue-900">Pipeline Systems</h4>
+                            <p class="text-gray-600 text-sm">For medium to large dairy operations.</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <i class="fas fa-sync text-blue-900 text-2xl mb-2"></i>
+                            <h4 class="font-bold text-blue-900">Rotary Parlors</h4>
+                            <p class="text-gray-600 text-sm">High-throughput automated milking.</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <i class="fas fa-thermometer-half text-blue-900 text-2xl mb-2"></i>
+                            <h4 class="font-bold text-blue-900">Milk Cooling</h4>
+                            <p class="text-gray-600 text-sm">Integrated cooling to preserve milk quality.</p>
+                        </div>
+                    </div>
+                    <a href="#contact" class="bg-blue-900 text-white px-6 py-3 rounded font-bold hover:bg-blue-800 transition inline-block">Request a Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHEESE PRODUCTION -->
+    <section id="cheese" class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-start gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=800&q=80" alt="Cheese Production" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <div class="inline-block bg-blue-900 text-white text-xs font-bold px-3 py-1 rounded mb-4 uppercase tracking-wide">Processing Lines</div>
+                    <h2 class="text-3xl font-bold text-blue-900 mb-4">Cheese Production Equipment</h2>
+                    <div class="w-16 h-1 bg-blue-900 mb-6"></div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Complete cheese production lines for artisan and industrial-scale processors. From curd cutting to pressing, aging, and packaging — we supply it all.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-900 mr-3 mt-1"></i><div><strong class="text-blue-900">Vat & Curd Cutters</strong> – Precision stainless steel curd cutting equipment</div></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-900 mr-3 mt-1"></i><div><strong class="text-blue-900">Cheese Presses</strong> – Hydraulic and pneumatic presses for firm, consistent results</div></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-900 mr-3 mt-1"></i><div><strong class="text-blue-900">Aging Rooms</strong> – Climate-controlled units for proper maturation</div></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-900 mr-3 mt-1"></i><div><strong class="text-blue-900">Packaging Lines</strong> – Vacuum and MAP packaging for extended shelf life</div></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-900 mr-3 mt-1"></i><div><strong class="text-blue-900">Whey Processing</strong> – Equipment to process and valorize whey byproducts</div></li>
+                    </ul>
+                    <a href="#contact" class="bg-blue-900 text-white px-6 py-3 rounded font-bold hover:bg-blue-800 transition inline-block">Request a Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Why Choose Ogies for Dairy Equipment?</h2>
+            <div class="grid md:grid-cols-4 gap-6 text-center">
+                <div class="p-6"><i class="fas fa-certificate text-blue-300 text-4xl mb-4"></i><h3 class="font-bold text-lg mb-2">Certified Quality</h3><p class="text-blue-200 text-sm">All equipment meets international and local food safety standards.</p></div>
+                <div class="p-6"><i class="fas fa-tools text-blue-300 text-4xl mb-4"></i><h3 class="font-bold text-lg mb-2">Installation & Training</h3><p class="text-blue-200 text-sm">Professional installation, commissioning and operator training included.</p></div>
+                <div class="p-6"><i class="fas fa-headset text-blue-300 text-4xl mb-4"></i><h3 class="font-bold text-lg mb-2">24/7 After-Sales</h3><p class="text-blue-200 text-sm">Dedicated support team for maintenance and spare parts.</p></div>
+                <div class="p-6"><i class="fas fa-dollar-sign text-blue-300 text-4xl mb-4"></i><h3 class="font-bold text-lg mb-2">Flexible Financing</h3><p class="text-blue-200 text-sm">Payment plans available to suit small and large-scale operations.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="py-16 bg-white text-center">
+        <div class="container mx-auto px-4 max-w-2xl">
+            <h2 class="text-3xl font-bold text-blue-900 mb-4">Get a Custom Quote Today</h2>
+            <p class="text-gray-600 text-lg mb-8">Tell us your production volume and requirements, and we'll recommend the right equipment for your dairy business.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="tel:+256790322257" class="bg-blue-900 text-white px-6 py-3 rounded font-bold hover:bg-blue-800 transition"><i class="fas fa-phone mr-2"></i>Call Us Now</a>
+                <a href="https://wa.me/256790322257" class="border-2 border-blue-900 text-blue-900 px-6 py-3 rounded font-bold hover:bg-blue-900 hover:text-white transition"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">OGIES</h3>
+                    <p class="mb-4">Providing premium dairy equipment and property management services in Kampala, Uganda.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-blue-200">Home</a></li>
+                        <li><a href="about.html" class="hover:text-blue-200">About Us</a></li>
+                        <li><a href="dairy.html" class="hover:text-blue-200">Dairy Sector</a></li>
+                        <li><a href="agrifood.html" class="hover:text-blue-200">Agri-food</a></li>
+                        <li><a href="property.html" class="hover:text-blue-200">Property Management</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Dairy Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#pasteurizers" class="hover:text-blue-200">Pasteurizers</a></li>
+                        <li><a href="#milking" class="hover:text-blue-200">Milking Machines</a></li>
+                        <li><a href="#cheese" class="hover:text-blue-200">Cheese Production</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Homogenizers</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Separators</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Info</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-2"></i><span>Lungujja Kosovo, Kampala, Uganda</span></li>
+                        <li class="flex items-start"><i class="fas fa-phone-alt mt-1 mr-2"></i><span>+256 790 322 257</span></li>
+                        <li class="flex items-start"><i class="fas fa-envelope mt-1 mr-2"></i><span>Ogiesequipmnt@gmail.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 pt-8 text-center">
+                
+                <p>&copy; 2024 Ogies Dairy & Property Management. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="https://wa.me/256790322257" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>

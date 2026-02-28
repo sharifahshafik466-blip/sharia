@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri-food Industry | Ogies Dairy & Property Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --primary-blue: #1a4b8c; --secondary-blue: #2a6fd6; --light-blue: #e6f0fa; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
+        .nav-link:hover { color: var(--secondary-blue); border-bottom: 2px solid var(--secondary-blue); }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .whatsapp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
+            background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center;
+            font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 100;
+            display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+        }
+        .whatsapp-float:hover { background-color: #128C7E; transform: scale(1.1); }
+        .hero-agri {
+            background: linear-gradient(rgba(26, 75, 140, 0.85), rgba(26, 75, 140, 0.85)),
+                url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=1470&q=80');
+            background-size: cover; background-position: center;
+        }
+        .solution-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
+        .solution-card { transition: all 0.3s; }
+        .industry-icon { font-size: 2.5rem; color: #1a4b8c; }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Top Bar -->
+    <div class="bg-blue-900 text-white py-2 px-4">
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center">
+                <i class="fas fa-globe mr-2"></i>
+                <select class="bg-blue-900 text-white border-none focus:ring-0">
+                    <option>English</option><option>Luganda</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+   
+                    <!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <div class="mr-3 flex-shrink-0">
+                <img src="logo.png" alt="OGIES Logo" class="h-12 w-12 rounded-full object-cover border-2 border-blue-900">
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-blue-900 leading-none">OGIES</div>
+                <div class="text-xs text-gray-600">Dairy & Property Management</div>
+            </div>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex space-x-8 items-center">
+            <a href="index.html" class="nav-link font-medium text-gray-700 hover:text-blue-900">Home</a>
+            <a href="about.html" class="nav-link font-medium text-blue-900 border-b-2 border-blue-900">Company</a>
+            
+            <!-- Dropdown (hover on desktop, we'll make it click-friendly on mobile later) -->
+            <div class="dropdown relative group">
+                <button class="nav-link font-medium text-gray-700 hover:text-blue-900 flex items-center">
+                    Dairy Sector <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                </button>
+                <div class="dropdown-menu absolute hidden group-hover:block bg-white shadow-lg rounded mt-2 py-2 w-48">
+                    <a href="dairy.html#pasteurizers" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900">Pasteurizers</a>
+                    <a href="dairy.html#milking" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900">Milking Machines</a>
+                    <a href="dairy.html#cheese" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900">Cheese Production</a>
+                </div>
+            </div>
+            
+            <a href="agrifood.html" class="nav-link font-medium text-gray-700 hover:text-blue-900">Agri-food Industry</a>
+            <a href="property.html" class="nav-link font-medium text-gray-700 hover:text-blue-900">Property Management</a>
+            <a href="#" class="nav-link font-medium text-gray-700 hover:text-blue-900">News</a>
+            <a href="#contact" class="nav-link font-medium text-gray-700 hover:text-blue-900">Contacts</a>
+        </nav>
+
+        <!-- Hamburger Button (mobile only) -->
+        <button id="mobile-menu-btn" class="md:hidden text-blue-900 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+        <div class="px-4 py-6 flex flex-col space-y-4">
+            <a href="index.html" class="font-medium text-gray-700 hover:text-blue-900">Home</a>
+            <a href="about.html" class="font-medium text-blue-900">Company</a>
+            
+            <!-- Mobile Dropdown (simple nested list for mobile) -->
+            <div class="space-y-2">
+                <div class="font-medium text-gray-700">Dairy Sector</div>
+                <div class="pl-4 flex flex-col space-y-2">
+                    <a href="dairy.html#pasteurizers" class="text-gray-700 hover:text-blue-900">Pasteurizers</a>
+                    <a href="dairy.html#milking" class="text-gray-700 hover:text-blue-900">Milking Machines</a>
+                    <a href="dairy.html#cheese" class="text-gray-700 hover:text-blue-900">Cheese Production</a>
+                </div>
+            </div>
+            
+            <a href="agrifood.html" class="font-medium text-gray-700 hover:text-blue-900">Agri-food Industry</a>
+            <a href="property.html" class="font-medium text-gray-700 hover:text-blue-900">Property Management</a>
+            <a href="#" class="font-medium text-gray-700 hover:text-blue-900">News</a>
+            <a href="#contact" class="font-medium text-gray-700 hover:text-blue-900">Contacts</a>
+        </div>
+    </div>
+</header>
+  
+
+    <!-- Hero -->
+    <section class="hero-agri text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-blue-200 uppercase tracking-widest text-sm mb-3">Processing & Production</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Agri-food Industry</h1>
+            <p class="text-xl max-w-2xl mx-auto text-blue-100">End-to-end food processing equipment and solutions for Uganda's growing agricultural and food manufacturing sector.</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-blue-50 py-3 px-4">
+        <div class="container mx-auto text-sm text-gray-600">
+            <a href="index.html" class="hover:text-blue-900">Home</a> <span class="mx-2">/</span> <span class="text-blue-900 font-medium">Agri-food Industry</span>
+        </div>
+    </div>
+
+    <!-- Intro -->
+    <section class="py-14 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-4">Powering Uganda's Food Processing Sector</h2>
+                    <div class="w-16 h-1 bg-blue-900 mb-6"></div>
+                    <p class="text-gray-600 mb-4 leading-relaxed">The agri-food industry is the backbone of Uganda's economy. Ogies provides the equipment, expertise, and ongoing support to help food processors operate more efficiently, reduce waste, and meet both local and export quality standards.</p>
+                    <p class="text-gray-600 leading-relaxed">From processing lines to packaging and quality control, we are your one-stop partner for agri-food industrial solutions in East Africa.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="c.jpg" alt="Food Processing" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Grid -->
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-4">Our Agri-food Solutions</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-xl mx-auto">Comprehensive equipment and services for every stage of food processing and production.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Processing Lines -->
+                <div class="solution-card bg-white rounded-lg overflow-hidden shadow">
+                    <img src="" alt="Processing Lines" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <i class="fas fa-industry industry-icon mb-3"></i>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Processing Lines</h3>
+                        <p class="text-gray-600 mb-4">Complete automated and semi-automated production lines for fruits, vegetables, grains, and dairy-based products.</p>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Washing & sorting systems</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Blanching & cooking units</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Mixing & blending equipment</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Filling & portioning machines</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Packaging Solutions -->
+                <div class="solution-card bg-white rounded-lg overflow-hidden shadow">
+                    <img src="v.jpg" alt="Packaging" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <i class="fas fa-box industry-icon mb-3"></i>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Packaging Solutions</h3>
+                        <p class="text-gray-600 mb-4">Modern packaging systems that extend shelf life, maintain hygiene, and improve product presentation for retail markets.</p>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Vacuum packaging machines</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Modified atmosphere packaging (MAP)</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Pouch & sachet filling</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Labelling & coding systems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Quality Control -->
+                <div class="solution-card bg-white rounded-lg overflow-hidden shadow">
+                    <img src="c.jpg" alt="Quality Control" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <i class="fas fa-microscope industry-icon mb-3"></i>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Quality Control Systems</h3>
+                        <p class="text-gray-600 mb-4">Equipment and instrumentation to ensure consistent product quality and compliance with food safety regulations.</p>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Metal detection systems</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Weight & checkweighing</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Temperature monitoring</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Microbiological testing kits</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cold Storage -->
+                <div class="solution-card bg-white rounded-lg overflow-hidden shadow">
+                    <img src="" alt="Cold Storage" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <i class="fas fa-snowflake industry-icon mb-3"></i>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Cold Chain & Storage</h3>
+                        <p class="text-gray-600 mb-4">Refrigeration and cold storage solutions to reduce post-harvest losses and maintain product integrity throughout the supply chain.</p>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Walk-in cold rooms</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Blast chillers & freezers</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Refrigerated transport</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Temperature logging systems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Grain & Milling -->
+                <div class="solution-card bg-white rounded-lg overflow-hidden shadow">
+                    <img src="b.jpg" alt="Grain Processing" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <i class="fas fa-seedling industry-icon mb-3"></i>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Grain & Milling Equipment</h3>
+                        <p class="text-gray-600 mb-4">Efficient milling and grain processing solutions supporting Uganda's maize, sorghum, and millet industries.</p>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Hammer mills & roller mills</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Grain cleaners & graders</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Silos & storage systems</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Flour packaging units</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Consulting & Training -->
+                <div class="solution-card bg-white rounded-lg overflow-hidden shadow">
+                    <img src="d.jpg" alt="Training" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <i class="fas fa-chalkboard-teacher industry-icon mb-3"></i>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Consulting & Training</h3>
+                        <p class="text-gray-600 mb-4">Expert consulting to help you select the right equipment, design efficient production layouts, and train your staff.</p>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Plant layout & design</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>HACCP implementation support</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Operator training programs</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Regulatory compliance guidance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Served -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Industries We Serve</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-6 bg-blue-50 rounded-lg hover:bg-blue-900 hover:text-white transition duration-300 group">
+                    <i class="fas fa-cow text-blue-900 text-4xl mb-3 group-hover:text-white"></i>
+                    <h3 class="font-bold">Dairy Processing</h3>
+                </div>
+                <div class="p-6 bg-blue-50 rounded-lg hover:bg-blue-900 hover:text-white transition duration-300 group">
+                    <i class="fas fa-apple-alt text-blue-900 text-4xl mb-3 group-hover:text-white"></i>
+                    <h3 class="font-bold">Fruit & Vegetable</h3>
+                </div>
+                <div class="p-6 bg-blue-50 rounded-lg hover:bg-blue-900 hover:text-white transition duration-300 group">
+                    <i class="fas fa-bread-slice text-blue-900 text-4xl mb-3 group-hover:text-white"></i>
+                    <h3 class="font-bold">Bakery & Milling</h3>
+                </div>
+                <div class="p-6 bg-blue-50 rounded-lg hover:bg-blue-900 hover:text-white transition duration-300 group">
+                    <i class="fas fa-fish text-blue-900 text-4xl mb-3 group-hover:text-white"></i>
+                    <h3 class="font-bold">Fish & Poultry</h3>
+                </div>
+                <div class="p-6 bg-blue-50 rounded-lg hover:bg-blue-900 hover:text-white transition duration-300 group">
+                    <i class="fas fa-coffee text-blue-900 text-4xl mb-3 group-hover:text-white"></i>
+                    <h3 class="font-bold">Coffee & Tea</h3>
+                </div>
+                <div class="p-6 bg-blue-50 rounded-lg hover:bg-blue-900 hover:text-white transition duration-300 group">
+                    <i class="fas fa-oil-can text-blue-900 text-4xl mb-3 group-hover:text-white"></i>
+                    <h3 class="font-bold">Edible Oils</h3>
+                </div>
+                <div class="p-6 bg-blue-50 rounded-lg hover:bg-blue-900 hover:text-white transition duration-300 group">
+                    <i class="fas fa-leaf text-blue-900 text-4xl mb-3 group-hover:text-white"></i>
+                    <h3 class="font-bold">Herbs & Spices</h3>
+                </div>
+                <div class="p-6 bg-blue-50 rounded-lg hover:bg-blue-900 hover:text-white transition duration-300 group">
+                    <i class="fas fa-blender text-blue-900 text-4xl mb-3 group-hover:text-white"></i>
+                    <h3 class="font-bold">Beverages</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="py-16 bg-blue-900 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-4">Let's Build Your Production Line</h2>
+            <p class="text-blue-200 text-lg mb-8 max-w-xl mx-auto">Contact our team for a free consultation and equipment assessment tailored to your business needs.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="tel:+256790322257" class="bg-white text-blue-900 px-6 py-3 rounded font-bold hover:bg-blue-100 transition"><i class="fas fa-phone mr-2"></i>Call Us</a>
+                <a href="https://wa.me/256790322257" class="border-2 border-white px-6 py-3 rounded font-bold hover:bg-white hover:text-blue-900 transition"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12 border-t border-blue-800">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">OGIES</h3>
+                    <p class="mb-4">Providing premium dairy equipment and property management services in Kampala, Uganda.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-blue-200">Home</a></li>
+                        <li><a href="about.html" class="hover:text-blue-200">About Us</a></li>
+                        <li><a href="dairy.html" class="hover:text-blue-200">Dairy Sector</a></li>
+                        <li><a href="agrifood.html" class="hover:text-blue-200">Agri-food</a></li>
+                        <li><a href="property.html" class="hover:text-blue-200">Property Management</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="dairy.html" class="hover:text-blue-200">Dairy Equipment</a></li>
+                        <li><a href="agrifood.html" class="hover:text-blue-200">Agri-food Solutions</a></li>
+                        <li><a href="property.html" class="hover:text-blue-200">Property Management</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Consultation</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Maintenance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Info</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-2"></i><span>Lungujja Kosovo, Kampala, Uganda</span></li>
+                        <li class="flex items-start"><i class="fas fa-phone-alt mt-1 mr-2"></i><span>+256 790 322 257</span></li>
+                        <li class="flex items-start"><i class="fas fa-envelope mt-1 mr-2"></i><span>Ogiesequipmnt@gmail.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align:center; padding:15px; font-family:system-ui, -apple-system, sans-serif;">
+  <a href="https://wa.me/256787206347" target="_blank" style="text-decoration:none;">
+    <div style="
+      display:inline-block;
+      font-size:2.3rem;
+      font-weight:800;
+      color:#ffffff;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+      padding:10px 22px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.25);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      animation: bounce-glow 2.4s infinite alternate;
+      transition: all 0.3s ease;
+    " onmouseover="this.style.transform='scale(1.08)';" onmouseout="this.style.transform='scale(1)';">
+      Sharifa Did It! 💫
+      <br style="line-height:0.4;">
+      <span style="font-size:1.1rem; font-weight:500; opacity:0.9;">
+        Chat on WhatsApp → 0787206347
+      </span>
+    </div>
+  </a>
+
+  <style>
+    @keyframes bounce-glow {
+      from {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.25),
+                    0 0 12px rgba(255,255,255,0.4);
+      }
+      to {
+        transform: translateY(-8px) scale(1.04);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.35),
+                    0 0 24px rgba(255,255,255,0.7);
+      }
+    }
+  </style>
+</div>
+            <div class="border-t border-blue-800 pt-8 text-center">
+                <p>&copy; 2026Ogies Dairy & Property Management. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="https://wa.me/256790322257" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <!-- Add this small JavaScript (put it before </body> or in a script tag) -->
+<script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>

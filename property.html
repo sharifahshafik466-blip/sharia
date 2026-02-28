@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management | Ogies Dairy & Property Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --primary-blue: #1a4b8c; --secondary-blue: #2a6fd6; --light-blue: #e6f0fa; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
+        .nav-link:hover { color: var(--secondary-blue); border-bottom: 2px solid var(--secondary-blue); }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .whatsapp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
+            background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center;
+            font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 100;
+            display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+        }
+        .whatsapp-float:hover { background-color: #128C7E; transform: scale(1.1); }
+        .hero-property {
+            background: linear-gradient(rgba(26, 75, 140, 0.85), rgba(26, 75, 140, 0.85)),
+                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1470&q=80');
+            background-size: cover; background-position: center;
+        }
+        .service-card { transition: all 0.3s; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
+        .process-step { position: relative; }
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 2.5rem;
+            left: calc(100% - 0px);
+            width: 100%;
+            height: 2px;
+            background: #1a4b8c;
+            display: none;
+        }
+        @media (min-width: 768px) { .process-step:not(:last-child)::after { display: block; } }
+        .property-type-card:hover { border-color: #1a4b8c; background-color: #e6f0fa; }
+        .property-type-card { transition: all 0.3s; }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Top Bar -->
+    <div class="bg-blue-900 text-white py-2 px-4">
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center">
+                <i class="fas fa-globe mr-2"></i>
+                <select class="bg-blue-900 text-white border-none focus:ring-0">
+                    <option>English</option><option>Luganda</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <div class="mr-3 flex-shrink-0">
+                <img src="logo.png" alt="OGIES Logo" class="h-12 w-12 rounded-full object-cover border-2 border-blue-900">
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-blue-900 leading-none">OGIES</div>
+                <div class="text-xs text-gray-600">Dairy & Property Management</div>
+            </div>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex space-x-8 items-center">
+            <a href="index.html" class="nav-link font-medium text-gray-700 hover:text-blue-900">Home</a>
+            <a href="about.html" class="nav-link font-medium text-blue-900 border-b-2 border-blue-900">Company</a>
+            
+            <!-- Dropdown (hover on desktop, we'll make it click-friendly on mobile later) -->
+            <div class="dropdown relative group">
+                <button class="nav-link font-medium text-gray-700 hover:text-blue-900 flex items-center">
+                    Dairy Sector <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                </button>
+                <div class="dropdown-menu absolute hidden group-hover:block bg-white shadow-lg rounded mt-2 py-2 w-48">
+                    <a href="dairy.html#pasteurizers" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900">Pasteurizers</a>
+                    <a href="dairy.html#milking" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900">Milking Machines</a>
+                    <a href="dairy.html#cheese" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900">Cheese Production</a>
+                </div>
+            </div>
+            
+            <a href="agrifood.html" class="nav-link font-medium text-gray-700 hover:text-blue-900">Agri-food Industry</a>
+            <a href="property.html" class="nav-link font-medium text-gray-700 hover:text-blue-900">Property Management</a>
+            <a href="#" class="nav-link font-medium text-gray-700 hover:text-blue-900">News</a>
+            <a href="#contact" class="nav-link font-medium text-gray-700 hover:text-blue-900">Contacts</a>
+        </nav>
+
+        <!-- Hamburger Button (mobile only) -->
+        <button id="mobile-menu-btn" class="md:hidden text-blue-900 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+        <div class="px-4 py-6 flex flex-col space-y-4">
+            <a href="index.html" class="font-medium text-gray-700 hover:text-blue-900">Home</a>
+            <a href="about.html" class="font-medium text-blue-900">Company</a>
+            
+            <!-- Mobile Dropdown (simple nested list for mobile) -->
+            <div class="space-y-2">
+                <div class="font-medium text-gray-700">Dairy Sector</div>
+                <div class="pl-4 flex flex-col space-y-2">
+                    <a href="dairy.html#pasteurizers" class="text-gray-700 hover:text-blue-900">Pasteurizers</a>
+                    <a href="dairy.html#milking" class="text-gray-700 hover:text-blue-900">Milking Machines</a>
+                    <a href="dairy.html#cheese" class="text-gray-700 hover:text-blue-900">Cheese Production</a>
+                </div>
+            </div>
+            
+            <a href="agrifood.html" class="font-medium text-gray-700 hover:text-blue-900">Agri-food Industry</a>
+            <a href="property.html" class="font-medium text-gray-700 hover:text-blue-900">Property Management</a>
+            <a href="#" class="font-medium text-gray-700 hover:text-blue-900">News</a>
+            <a href="#contact" class="font-medium text-gray-700 hover:text-blue-900">Contacts</a>
+        </div>
+    </div>
+</header>
+
+    <!-- Hero -->
+    <section class="hero-property text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-blue-200 uppercase tracking-widest text-sm mb-3">Real Estate & Land Services</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Property Management</h1>
+            <p class="text-xl max-w-2xl mx-auto text-blue-100">Professional oversight and management of agricultural and commercial properties across the Kampala region.</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-blue-50 py-3 px-4">
+        <div class="container mx-auto text-sm text-gray-600">
+            <a href="index.html" class="hover:text-blue-900">Home</a> <span class="mx-2">/</span> <span class="text-blue-900 font-medium">Property Management</span>
+        </div>
+    </div>
+
+    <!-- Intro -->
+    <section class="py-14 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-4">Trusted Property Management in Kampala</h2>
+                    <div class="w-16 h-1 bg-blue-900 mb-6"></div>
+                    <p class="text-gray-600 mb-4 leading-relaxed">At Ogies, we understand that your property is one of your most valuable assets. Our experienced property management team provides comprehensive oversight, from tenant relations and rent collection to facility maintenance and legal compliance.</p>
+                    <p class="text-gray-600 leading-relaxed">With deep knowledge of the Kampala property market and Uganda's land laws, we give property owners peace of mind while maximizing the value and returns on their investments.</p>
+                    <div class="mt-6 flex gap-4">
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-2xl font-bold text-blue-900">50+</div>
+                            <div class="text-sm text-gray-600">Properties Managed</div>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-2xl font-bold text-blue-900">10+</div>
+                            <div class="text-sm text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-2xl font-bold text-blue-900">98%</div>
+                            <div class="text-sm text-gray-600">Client Retention</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Property Management" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-4">Our Property Services</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-xl mx-auto">Full-spectrum property management services for agricultural land, residential estates, and commercial facilities.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="service-card bg-white p-8 rounded-lg shadow">
+                    <div class="text-blue-900 text-4xl mb-4"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Land Management</h3>
+                    <p class="text-gray-600 mb-4">Expert management of agricultural land, ensuring proper utilization, boundary protection, and compliance with Uganda's land regulations.</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Land title verification & registration</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Boundary surveys & demarcation</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Land use planning</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Dispute resolution support</li>
+                    </ul>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-lg shadow">
+                    <div class="text-blue-900 text-4xl mb-4"><i class="fas fa-tools"></i></div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Facility Maintenance</h3>
+                    <p class="text-gray-600 mb-4">Proactive and reactive maintenance services to keep your properties in excellent condition and protect your investment value.</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Scheduled preventive maintenance</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Emergency repairs</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Contractor coordination</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Property inspection reports</li>
+                    </ul>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-lg shadow">
+                    <div class="text-blue-900 text-4xl mb-4"><i class="fas fa-users"></i></div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Tenant Relations</h3>
+                    <p class="text-gray-600 mb-4">Professional management of all tenant-related matters, ensuring smooth relationships and timely rent collection.</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Tenant screening & vetting</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Lease preparation & management</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Rent collection & disbursement</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Conflict mediation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-lg shadow">
+                    <div class="text-blue-900 text-4xl mb-4"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Financial Reporting</h3>
+                    <p class="text-gray-600 mb-4">Transparent, detailed financial reports so you always know how your property is performing.</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Monthly income statements</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Expense tracking</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Rental yield analysis</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Tax compliance documentation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-lg shadow">
+                    <div class="text-blue-900 text-4xl mb-4"><i class="fas fa-search"></i></div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Property Valuation</h3>
+                    <p class="text-gray-600 mb-4">Accurate property valuations to support buying, selling, or leasing decisions based on current Kampala market data.</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Market appraisals</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Investment feasibility studies</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Comparative market analysis</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Rental pricing guidance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-lg shadow">
+                    <div class="text-blue-900 text-4xl mb-4"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Legal & Compliance</h3>
+                    <p class="text-gray-600 mb-4">Ensuring your property operations comply with all Ugandan property laws, local authority regulations, and environmental requirements.</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Permits & licensing management</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Lease compliance oversight</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Eviction procedures (legal)</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-900 mr-2"></i>Environmental compliance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Types -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Property Types We Manage</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="property-type-card border-2 border-gray-200 rounded-lg p-6 text-center cursor-default">
+                    <i class="fas fa-tractor text-blue-900 text-4xl mb-3"></i>
+                    <h3 class="font-bold text-blue-900">Agricultural Land</h3>
+                    <p class="text-gray-600 text-sm mt-2">Farms, ranches, and crop land across Uganda.</p>
+                </div>
+                <div class="property-type-card border-2 border-gray-200 rounded-lg p-6 text-center cursor-default">
+                    <i class="fas fa-warehouse text-blue-900 text-4xl mb-3"></i>
+                    <h3 class="font-bold text-blue-900">Commercial Properties</h3>
+                    <p class="text-gray-600 text-sm mt-2">Warehouses, factories, and office spaces.</p>
+                </div>
+                <div class="property-type-card border-2 border-gray-200 rounded-lg p-6 text-center cursor-default">
+                    <i class="fas fa-home text-blue-900 text-4xl mb-3"></i>
+                    <h3 class="font-bold text-blue-900">Residential Estates</h3>
+                    <p class="text-gray-600 text-sm mt-2">Houses and apartments in Kampala and surrounds.</p>
+                </div>
+                <div class="property-type-card border-2 border-gray-200 rounded-lg p-6 text-center cursor-default">
+                    <i class="fas fa-industry text-blue-900 text-4xl mb-3"></i>
+                    <h3 class="font-bold text-blue-900">Industrial Facilities</h3>
+                    <p class="text-gray-600 text-sm mt-2">Processing plants and industrial parks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">How It Works</h2>
+            <div class="grid md:grid-cols-4 gap-6 text-center relative">
+                <div class="process-step">
+                    <div class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="font-bold text-blue-900 mb-2">Initial Consultation</h3>
+                    <p class="text-gray-600 text-sm">We meet to understand your property and management needs.</p>
+                </div>
+                <div class="process-step">
+                    <div class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="font-bold text-blue-900 mb-2">Property Assessment</h3>
+                    <p class="text-gray-600 text-sm">We inspect and evaluate your property's current condition and value.</p>
+                </div>
+                <div class="process-step">
+                    <div class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="font-bold text-blue-900 mb-2">Management Agreement</h3>
+                    <p class="text-gray-600 text-sm">We sign a clear, transparent agreement outlining all services and fees.</p>
+                </div>
+                <div>
+                    <div class="w-16 h-16 bg-blue-900 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+                    <h3 class="font-bold text-blue-900 mb-2">Ongoing Management</h3>
+                    <p class="text-gray-600 text-sm">We manage everything while you receive regular reports and returns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-4 max-w-3xl text-center">
+            <i class="fas fa-quote-left text-5xl text-blue-400 mb-6"></i>
+            <p class="text-xl italic text-blue-100 mb-6 leading-relaxed">"Ogies has been managing our agricultural property in Wakiso for three years. Their team is professional, responsive, and has significantly increased our rental income while reducing our management headaches."</p>
+            <div class="flex items-center justify-center gap-4">
+                <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-2xl font-bold">JM</div>
+                <div class="text-left">
+                    <div class="font-bold">MUGERWA MOSES</div>
+                    <div class="text-blue-300 text-sm">Property Owner, Wakiso District</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Enquire About Property Management</h2>
+            <div class="flex flex-col md:flex-row bg-blue-50 rounded-lg overflow-hidden shadow-lg max-w-4xl mx-auto">
+                <div class="md:w-1/2 bg-blue-900 text-white p-8">
+                    <h3 class="text-2xl font-bold mb-4">Contact Our Property Team</h3>
+                    <p class="text-blue-200 mb-6">Get a free property management consultation with our experts in Kampala.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3"></i><span>Lungujja Kosovo, Kampala, Uganda</span></div>
+                        <div class="flex items-start"><i class="fas fa-phone-alt mt-1 mr-3"></i><span>+256 790 322 257</span></div>
+                        <div class="flex items-start"><i class="fas fa-envelope mt-1 mr-3"></i><span>Ogiesequipmnt@gmail.com</span></div>
+                        <div class="flex items-start"><i class="fas fa-clock mt-1 mr-3"></i><span>Mon–Sat: 8:00 AM – 6:00 PM</span></div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="https://wa.me/256790322257" class="inline-flex items-center bg-green-500 text-white px-5 py-3 rounded font-bold hover:bg-green-600 transition">
+                            <i class="fab fa-whatsapp mr-2 text-xl"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-white p-8">
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 mb-1">Full Name</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-900">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-900">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-1">Property Type</label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-900">
+                                <option>Agricultural Land</option>
+                                <option>Commercial Property</option>
+                                <option>Residential Estate</option>
+                                <option>Industrial Facility</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-1">Property Location</label>
+                            <input type="text" placeholder="e.g. Wakiso, Entebbe Road..." class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-900">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-1">Message</label>
+                            <textarea rows="3" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-900"></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-900 text-white px-6 py-3 rounded font-bold hover:bg-blue-800 transition w-full">Send Enquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">OGIES</h3>
+                    <p class="mb-4">Providing premium dairy equipment and property management services in Kampala, Uganda.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-blue-200">Home</a></li>
+                        <li><a href="about.html" class="hover:text-blue-200">About Us</a></li>
+                        <li><a href="dairy.html" class="hover:text-blue-200">Dairy Sector</a></li>
+                        <li><a href="agrifood.html" class="hover:text-blue-200">Agri-food</a></li>
+                        <li><a href="property.html" class="hover:text-blue-200">Property Management</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Property Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-200">Land Management</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Facility Maintenance</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Tenant Relations</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Property Valuation</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Legal Compliance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Info</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-2"></i><span>Lungujja Kosovo, Kampala, Uganda</span></li>
+                        <li class="flex items-start"><i class="fas fa-phone-alt mt-1 mr-2"></i><span>+256 790 322 257</span></li>
+                        <li class="flex items-start"><i class="fas fa-envelope mt-1 mr-2"></i><span>Ogiesequipmnt@gmail.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 pt-8 text-center">
+               <div style="text-align:center; padding:15px; font-family:system-ui, -apple-system, sans-serif;">
+  <a href="https://wa.me/256787206347" target="_blank" style="text-decoration:none;">
+    <div style="
+      display:inline-block;
+      font-size:2.3rem;
+      font-weight:800;
+      color:#ffffff;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+      padding:10px 22px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.25);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      animation: bounce-glow 2.4s infinite alternate;
+      transition: all 0.3s ease;
+    " onmouseover="this.style.transform='scale(1.08)';" onmouseout="this.style.transform='scale(1)';">
+      Sharifa Did It! 💫
+      <br style="line-height:0.4;">
+      <span style="font-size:1.1rem; font-weight:500; opacity:0.9;">
+        Chat on WhatsApp → 0787206347
+      </span>
+    </div>
+  </a>
+
+  <style>
+    @keyframes bounce-glow {
+      from {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.25),
+                    0 0 12px rgba(255,255,255,0.4);
+      }
+      to {
+        transform: translateY(-8px) scale(1.04);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.35),
+                    0 0 24px rgba(255,255,255,0.7);
+      }
+    }
+  </style>
+</div>
+                <p>&copy; 2026 Ogies Dairy & Property Management. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="https://wa.me/256790322257" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <!-- Add this small JavaScript (put it before </body> or in a script tag) -->
+<script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>

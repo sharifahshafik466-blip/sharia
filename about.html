@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Ogies Dairy & Property Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-blue: #1a4b8c;
+            --secondary-blue: #2a6fd6;
+            --light-blue: #e6f0fa;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
+        .nav-link:hover { color: var(--secondary-blue); border-bottom: 2px solid var(--secondary-blue); }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .whatsapp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
+            background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center;
+            font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 100;
+            display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+        }
+        .whatsapp-float:hover { background-color: #128C7E; transform: scale(1.1); }
+        .hero-inner {
+            background: linear-gradient(rgba(26, 75, 140, 0.85), rgba(26, 75, 140, 0.85)),
+                url('https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=1470&q=80');
+            background-size: cover; background-position: center;
+        }
+        .team-card:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
+        .value-card:hover { background-color: #1a4b8c; color: white; }
+        .value-card:hover .value-icon { color: white; }
+        .value-card:hover p { color: #cde; }
+        .value-card { transition: all 0.3s; }
+        .stat-number { font-size: 2.8rem; font-weight: 800; color: #1a4b8c; }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Top Bar -->
+    <div class="bg-blue-900 text-white py-2 px-4">
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center">
+                <i class="fas fa-globe mr-2"></i>
+                <select class="bg-blue-900 text-white border-none focus:ring-0">
+                    <option>English</option>
+                    <option>Luganda</option>
+                </select>
+            </div>
+        </div>
+    </div>
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <div class="mr-3 flex-shrink-0">
+                <img src="logo.png" alt="OGIES Logo" class="h-12 w-12 rounded-full object-cover border-2 border-blue-900">
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-blue-900 leading-none">OGIES</div>
+                <div class="text-xs text-gray-600">Dairy & Property Management</div>
+            </div>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex space-x-8 items-center">
+            <a href="index.html" class="nav-link font-medium text-gray-700 hover:text-blue-900">Home</a>
+            <a href="about.html" class="nav-link font-medium text-blue-900 border-b-2 border-blue-900">Company</a>
+            
+            <!-- Dropdown (hover on desktop, we'll make it click-friendly on mobile later) -->
+            <div class="dropdown relative group">
+                <button class="nav-link font-medium text-gray-700 hover:text-blue-900 flex items-center">
+                    Dairy Sector <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                </button>
+                <div class="dropdown-menu absolute hidden group-hover:block bg-white shadow-lg rounded mt-2 py-2 w-48">
+                    <a href="dairy.html#pasteurizers" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900">Pasteurizers</a>
+                    <a href="dairy.html#milking" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900">Milking Machines</a>
+                    <a href="dairy.html#cheese" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900">Cheese Production</a>
+                </div>
+            </div>
+            
+            <a href="agrifood.html" class="nav-link font-medium text-gray-700 hover:text-blue-900">Agri-food Industry</a>
+            <a href="property.html" class="nav-link font-medium text-gray-700 hover:text-blue-900">Property Management</a>
+            <a href="#" class="nav-link font-medium text-gray-700 hover:text-blue-900">News</a>
+            <a href="#contact" class="nav-link font-medium text-gray-700 hover:text-blue-900">Contacts</a>
+        </nav>
+
+        <!-- Hamburger Button (mobile only) -->
+        <button id="mobile-menu-btn" class="md:hidden text-blue-900 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+        <div class="px-4 py-6 flex flex-col space-y-4">
+            <a href="index.html" class="font-medium text-gray-700 hover:text-blue-900">Home</a>
+            <a href="about.html" class="font-medium text-blue-900">Company</a>
+            
+            <!-- Mobile Dropdown (simple nested list for mobile) -->
+            <div class="space-y-2">
+                <div class="font-medium text-gray-700">Dairy Sector</div>
+                <div class="pl-4 flex flex-col space-y-2">
+                    <a href="dairy.html#pasteurizers" class="text-gray-700 hover:text-blue-900">Pasteurizers</a>
+                    <a href="dairy.html#milking" class="text-gray-700 hover:text-blue-900">Milking Machines</a>
+                    <a href="dairy.html#cheese" class="text-gray-700 hover:text-blue-900">Cheese Production</a>
+                </div>
+            </div>
+            
+            <a href="agrifood.html" class="font-medium text-gray-700 hover:text-blue-900">Agri-food Industry</a>
+            <a href="property.html" class="font-medium text-gray-700 hover:text-blue-900">Property Management</a>
+            <a href="#" class="font-medium text-gray-700 hover:text-blue-900">News</a>
+            <a href="#contact" class="font-medium text-gray-700 hover:text-blue-900">Contacts</a>
+        </div>
+    </div>
+</header>
+    <!-- Hero -->
+    <section class="hero-inner text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-blue-200 uppercase tracking-widest text-sm mb-3">Who We Are</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">About Ogies</h1>
+            <p class="text-xl max-w-2xl mx-auto text-blue-100">A trusted partner for dairy equipment and property management in Uganda, built on expertise, integrity, and commitment to quality.</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-blue-50 py-3 px-4">
+        <div class="container mx-auto text-sm text-gray-600">
+            <a href="index.html" class="hover:text-blue-900">Home</a> <span class="mx-2">/</span> <span class="text-blue-900 font-medium">Company</span>
+        </div>
+    </div>
+
+    <!-- Our Story -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="hj.jpg" alt="Dairy Farm Uganda" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Story</h2>
+                    <div class="w-16 h-1 bg-blue-900 mb-6"></div>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Founded in Kampala, Ogies Dairy & Property Management has grown over a decade into one of Uganda's most reliable providers of dairy processing equipment and agricultural property solutions.</p>
+                    <p class="text-gray-600 mb-4 leading-relaxed">We began with a simple vision: to help Ugandan dairy farmers access modern, efficient processing technology that was previously out of reach. Today, we serve over 100 clients across the country, from small-scale farmers to industrial processors.</p>
+                    <p class="text-gray-600 leading-relaxed">Our property management division grew organically as clients sought trusted partners for managing their agricultural and commercial assets across the Kampala region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-12 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="stat-number">10+</div>
+                    <div class="text-gray-600 font-medium">Years Experience</div>
+                </div>
+                <div>
+                    <div class="stat-number">100+</div>
+                    <div class="text-gray-600 font-medium">Satisfied Clients</div>
+                </div>
+                <div>
+                    <div class="stat-number">3</div>
+                    <div class="text-gray-600 font-medium">Core Services</div>
+                </div>
+                <div>
+                    <div class="stat-number">24/7</div>
+                    <div class="text-gray-600 font-medium">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Mission & Vision</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-blue-900 text-white p-8 rounded-lg">
+                    <div class="text-4xl mb-4"><i class="fas fa-bullseye"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+                    <p class="text-blue-100 leading-relaxed">To empower Uganda's dairy and agricultural sectors by providing high-quality, reliable equipment and expert property management services that drive productivity, quality, and sustainable growth.</p>
+                </div>
+                <div class="border-2 border-blue-900 p-8 rounded-lg">
+                    <div class="text-4xl text-blue-900 mb-4"><i class="fas fa-eye"></i></div>
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Our Vision</h3>
+                    <p class="text-gray-600 leading-relaxed">To become East Africa's leading supplier of dairy processing technology and property management services, recognized for excellence, innovation, and the trust we build with every client.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Our Core Values</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="value-card bg-white p-8 rounded-lg shadow text-center cursor-default">
+                    <i class="fas fa-medal value-icon text-blue-900 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Quality</h3>
+                    <p class="text-gray-600">We source and supply only equipment that meets international standards and Ugandan food safety regulations.</p>
+                </div>
+                <div class="value-card bg-white p-8 rounded-lg shadow text-center cursor-default">
+                    <i class="fas fa-handshake value-icon text-blue-900 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Integrity</h3>
+                    <p class="text-gray-600">Transparent pricing, honest advice, and long-term relationships built on trust and accountability.</p>
+                </div>
+                <div class="value-card bg-white p-8 rounded-lg shadow text-center cursor-default">
+                    <i class="fas fa-lightbulb value-icon text-blue-900 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Innovation</h3>
+                    <p class="text-gray-600">Continuously seeking better technologies and solutions to meet the evolving needs of Uganda's agricultural sector.</p>
+                </div>
+                <div class="value-card bg-white p-8 rounded-lg shadow text-center cursor-default">
+                    <i class="fas fa-users value-icon text-blue-900 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Community</h3>
+                    <p class="text-gray-600">Committed to uplifting local dairy farmers and contributing to Uganda's food security and economic growth.</p>
+                </div>
+                <div class="value-card bg-white p-8 rounded-lg shadow text-center cursor-default">
+                    <i class="fas fa-leaf value-icon text-blue-900 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Sustainability</h3>
+                    <p class="text-gray-600">Promoting energy-efficient equipment and environmentally responsible practices across all our services.</p>
+                </div>
+                <div class="value-card bg-white p-8 rounded-lg shadow text-center cursor-default">
+                    <i class="fas fa-headset value-icon text-blue-900 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Support</h3>
+                    <p class="text-gray-600">24/7 after-sales support and maintenance services to ensure your operations never stop.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-blue-900 mb-4">Meet Our Team</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-xl mx-auto">Experienced professionals dedicated to delivering the best solutions for your dairy and property needs.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="team-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow hover:shadow-lg transition duration-300 text-center">
+                <img src="bj.jpg" alt="Mugerwa Moses" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-blue-900 uppercase">Mugerwa Moses</h3>
+                    <p class="text-blue-600 text-sm font-semibold mb-3">Founder & CEO</p>
+                    <p class="text-gray-600 text-sm">Over 10 years of experience in dairy processing and agricultural equipment supply across East Africa.</p>
+                </div>
+            </div>
+
+            <div class="team-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow hover:shadow-lg transition duration-300 text-center">
+                <img src="mz.jpg" alt="Kayondo Muhammad" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-blue-900 uppercase">Kayondo Muhammad</h3>
+                    <p class="text-blue-600 text-sm font-semibold mb-3">General Manager</p>
+                    <p class="text-gray-600 text-sm">Specialist in agricultural and commercial property management with a deep knowledge of the Kampala market.</p>
+                </div>
+            </div>
+
+            <div class="team-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow hover:shadow-lg transition duration-300 text-center">
+                <div class="w-full h-56 bg-gray-100 flex items-center justify-center">
+                     <span class="text-gray-400">Photo Coming Soon</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-blue-900 uppercase">Support Team</h3>
+                    <p class="text-blue-600 text-sm font-semibold mb-3">Technical Experts</p>
+                    <p class="text-gray-600 text-sm">Our dedicated field officers and technicians providing 24/7 support for all our dairy installations.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+              
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="py-16 bg-blue-900 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-4">Ready to Work With Us?</h2>
+            <p class="text-blue-200 text-lg mb-8 max-w-xl mx-auto">Whether you need dairy equipment or property management expertise, our team is here to help.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="tel:+256790322257" class="bg-white text-blue-900 px-6 py-3 rounded font-bold hover:bg-blue-100 transition"><i class="fas fa-phone mr-2"></i>Call Us</a>
+                <a href="https://wa.me/256790322257" class="border-2 border-white px-6 py-3 rounded font-bold hover:bg-white hover:text-blue-900 transition"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12 border-t border-blue-800">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">OGIES</h3>
+                    <p class="mb-4">Providing premium dairy equipment and property management services in Kampala, Uganda.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-blue-200">Home</a></li>
+                        <li><a href="about.html" class="hover:text-blue-200">About Us</a></li>
+                        <li><a href="dairy.html" class="hover:text-blue-200">Dairy Sector</a></li>
+                        <li><a href="agrifood.html" class="hover:text-blue-200">Agri-food</a></li>
+                        <li><a href="property.html" class="hover:text-blue-200">Property Management</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="dairy.html" class="hover:text-blue-200">Dairy Equipment</a></li>
+                        <li><a href="agrifood.html" class="hover:text-blue-200">Agri-food Solutions</a></li>
+                        <li><a href="property.html" class="hover:text-blue-200">Property Management</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Consultation</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Maintenance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Info</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-2"></i><span>Lungujja Kosovo, Kampala, Uganda</span></li>
+                        <li class="flex items-start"><i class="fas fa-phone-alt mt-1 mr-2"></i><span>+256 790 322 257</span></li>
+                        <li class="flex items-start"><i class="fas fa-envelope mt-1 mr-2"></i><span>Ogiesequipmnt@gmail.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 pt-8 text-center">
+                <p>&copy; 2026 Ogies Dairy & Property Management. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/256790322257" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>
